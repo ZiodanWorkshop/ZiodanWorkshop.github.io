@@ -1,17 +1,26 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  color: darkgray;
-  background-image: linear-gradient(gray,whitesmoke,whitesmoke,wheat);
+  font-size: 20px;
+  color: black;
+  background-image: -webkit-linear-gradient(wheat,gray);
   text-align: center;
   
 }
 nav{
   font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(wheat,gray,white);
+  background-image: linear-gradient(wheat,gray);
   font-size: medium;
   text-align: center;
+  padding: 10px;
+  margin: 10px; 
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  
 }
 p{
   text-align: center;
+}
+logone{
+  border-radius: 50%;
+  margin-left: auto;
 }
