@@ -1,12 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="it">
 
 <head>
   <meta charset="utf-8">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6658064176364810"
      crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>
+    Ziodan Workshop
+  </title>
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="">
 
@@ -15,7 +17,7 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
-
+  <script src="script.js"></script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
@@ -25,11 +27,13 @@
 </head>
 
 <body>
-
   <nav>
-    <img name="logone" src="logo.jpg" alt="" width="150" height="150">
-  <a href="https://www.sumupbookings.com/ziodan-workshop">Prenota Qua i nostri servizi</a>
-  <a href="https://www.instagram.com/ziodan.workshop/">instagram</a>
+    <button name="sidebarone">
+
+      <span onclick="openNav()">
+        <img src="logo.jpg" alt="" width="150" height="150">
+      </span>
+    </button>
 </nav>
   <p>
     La Tua Idea, la Nostra Creazione.
@@ -41,6 +45,24 @@
     ziodan Ceo
     altri membri in arrivo...
   </p>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <button name="instagram">
+      <a href="https://www.instagram.com/ziodan.workshop/">instagram</a>
+      <img src="Instagram-Icon.png" alt="" srcset="" width="30" height="30">
+    </button>
+    <a href="https://www.sumupbookings.com/ziodan-workshop">Prenota Qua i nostri servizi</a>
+    <a href="#">Clients</a>
+    <a href="about.html">Contatti</a>
+  </div>
+
+  <!-- Use any element to open the sidenav -->
+
+
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+  <div id="main">
+    ...
+  </div>
 
 </body>
 
