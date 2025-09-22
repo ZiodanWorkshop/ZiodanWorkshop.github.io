@@ -1,70 +1,94 @@
-<!doctype html>
-<html class="no-js" lang="it">
-
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta charset="utf-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6658064176364810"
-     crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    Ziodan Workshop
-  </title>
-     <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-  <script src="script.js"></script>
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziodan Workshop - La Tua Idea, la Nostra Creazione</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
-  <nav>
-    <button name="sidebarone">
 
-      <span onclick="openNav()">
-        <img src="logo.jpg" alt="" width="150" height="150">
-      </span>
-    </button>
-</nav>
-  <p>
-    La Tua Idea, la Nostra Creazione.
-    Benvenuto in Ziodan Workshop, il luogo dove la tua creatività prende forma. Siamo un’azienda giovane dedicata alla progettazione e alla realizzazione di prodotti personalizzati e soluzioni su misura. offriamo servizi vari date le nostre divisioni specializzate in vari settori
-    Trasformiamo le tue visioni in realtà. Che tu sia un’azienda alla ricerca di un prototipo funzionale, un professionista che necessita di un pezzo unico, o un privato con un’idea da sviluppare, Ziodan Workshop è il tuo partner ideale. Il nostro team di esperti artigiani e tecnici utilizza tecnologie all’avanguardia e la maestria tradizionale per garantire risultati di alta qualità, curati nei minimi dettagli.
-  </p>
-  <p>
-    il nostro team:
-    ziodan Ceo
-    altri membri in arrivo...
-  </p>
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <button name="instagram">
-      <a href="https://www.instagram.com/ziodan.workshop/">instagram</a>
-      <img src="Instagram-Icon.png" alt="" srcset="" width="30" height="30">
-    </button>
-    <a href="https://www.sumupbookings.com/ziodan-workshop">Prenota Qua i nostri servizi</a>
-    <a href="#">Clients</a>
-    <a href="about.html">Contatti</a>
-  </div>
+    <header class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="video-bg.mp4" type="video/mp4">
+            Il tuo browser non supporta i video HTML5.
+        </video>
+        <div class="hero-content">
+            <div class="logo-animation">
+                </div>
+            <h1>Ziodan Workshop</h1>
+            <p class="subtitle">La Tua Idea, la Nostra Creazione.</p>
+        </div>
+    </header>
 
-  <!-- Use any element to open the sidenav -->
+    <main>
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2>Benvenuto in Ziodan Workshop</h2>
+                <p class="section-lead">Il luogo dove la tua creatività prende forma.</p>
+                <p>
+                    Siamo un’azienda giovane dedicata alla progettazione e alla realizzazione di prodotti personalizzati e soluzioni su misura. Offriamo servizi vari come il noleggio di DJ per feste, date le nostre divisioni specializzate in vari settori.
+                </p>
+                <p>
+                    <strong>Trasformiamo le tue visioni in realtà.</strong> Che tu sia un’azienda alla ricerca di un prototipo funzionale, un professionista che necessita di un pezzo unico, o un privato con un’idea da sviluppare, Ziodan Workshop è il tuo partner ideale. Il nostro team di esperti artigiani e tecnici utilizza tecnologie all’avanguardia e la maestria tradizionale per garantire risultati di alta qualità, curati nei minimi dettagli.
+                </p>
+            </div>
+        </section>
 
+        <section id="services" class="content-section-dark">
+            <div class="container">
+                <h2>Cosa Facciamo</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Progettazione e Prototipazione</h3>
+                        <p>Dall'idea al prototipo funzionante. Sviluppiamo soluzioni su misura per aziende e privati, utilizzando tecnologie avanzate.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Realizzazioni Personalizzate</h3>
+                        <p>Creiamo pezzi unici e prodotti su richiesta, unendo artigianato e innovazione per un risultato di alta qualità.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Noleggio DJ per Eventi</h3>
+                        <p>La nostra divisione specializzata offre un servizio professionale di DJ per feste private, cerimonie ed eventi aziendali.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-  <div id="main">
-    ...
-  </div>
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2>Hai un'idea? Contattaci</h2>
+                <p>Siamo pronti ad ascoltarti. Scrivici o chiamaci per richiederci un preventivo o semplicemente per saperne di più.</p>
+                <div class="contact-details">
+                    <a href="mailto:ziodanbusiness@proton.me" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ziodanbusiness@proton.me</span>
+                    </a>
+                    <a href="tel:+393518128329" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+39 351 812 8329</span>
+                    </a>
+                    <a href="https://wa.me/390766502670" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+39 0766 502670</span>
+                    </a>
+                    <a href="https://www.instagram.com/ziodan.workshop" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@ziodan.workshop</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Ziodan Workshop. Tutti i diritti riservati.</p>
+    </footer>
 
 </body>
-
 </html>
