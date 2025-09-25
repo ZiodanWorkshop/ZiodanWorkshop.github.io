@@ -174,4 +174,12 @@ h2 {
     .contact-item {
         font-size: 1em; /* Riduce la dimensione del testo su schermi piccoli */
     }
+
+}
+.liquid-ether-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
 }
