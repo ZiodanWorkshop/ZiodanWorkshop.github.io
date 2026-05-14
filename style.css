@@ -183,3 +183,31 @@ h2 {
   height: 100%;
   touch-action: none;
 }
+
+.promo-section {
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: #fff;
+    text-align: center;
+}
+
+.promo-section .section-lead {
+    color: #ccc;
+}
+
+.promo-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #111;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.promo-button:hover {
+    background-color: #ddd;
+    transform: translateY(-2px);
+}
+
