@@ -41,7 +41,7 @@
         <script>
     google.load('feeds', '1');
     function initialize() {
-      var feed = new google.feeds.Feed('https://zdnworkshop.blogspot.com/feeds/posts/default?alt=rssre');
+      var feed = new google.feeds.Feed('https://zdnworkshop.blogspot.com/feeds/posts/default?alt=rss');
       feed.setNumEntries(5);
       feed.load(function(result) {
         if (!result.error) {
