@@ -35,6 +35,30 @@
             </div>
         </section>
 
+
+        <div id="blogger-feed">
+        <script src="https://www.google.com/jsapi"></script>
+        <script>
+    google.load('feeds', '1');
+    function initialize() {
+      var feed = new google.feeds.Feed('https://TUO_BLOG.blogspot.com/feeds/posts/default?alt=rss');
+      feed.setNumEntries(5);
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById('blogger-feed');
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            container.innerHTML += '<h3><a href="' + entry.link + '">' + entry.title + '</a></h3><p>' + entry.contentSnippet + '</p><hr>';
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+  </script>
+</div>
+
+
+
         <section id="services" class="content-section-dark">
             <div class="container">
                 <h2>Cosa Facciamo</h2>
