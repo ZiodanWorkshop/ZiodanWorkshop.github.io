@@ -209,6 +209,50 @@ h2 {
     color: white;
 }
 
+/* --- ANIMAZIONI SCROLL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ABOUT GRID --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+    align-items: center;
+}
+
+.about-header h2 {
+    font-size: 3em;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.about-header .section-lead {
+    font-size: 1.4em;
+    margin-bottom: 0;
+}
+
+.about-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.highlight {
+    background: linear-gradient(120deg, rgba(200,200,200,0.5) 0%, rgba(200,200,200,0) 100%);
+    padding: 0 5px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
 /* --- GRIGLIA SERVIZI --- */
 .services-grid {
     display: grid;
@@ -353,6 +397,11 @@ h2 {
     }
     h2 {
         font-size: 2em;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
     }
 }
 .liquid-ether-container {

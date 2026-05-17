@@ -41,16 +41,20 @@
     </header>
 
     <main>
-        <section id="about" class="content-section">
-            <div class="container">
-                <h2>Benvenuto in Ziodan Workshop</h2>
-                <p class="section-lead">Il laboratorio creativo dove progettazione tecnologica e intrattenimento si incontrano.</p>
-                <p>
-                    Non siamo la classica azienda. Ziodan Workshop è un hub multidisciplinare: uniamo la <strong>progettazione tecnica e la prototipazione rapida</strong> (tramite tecnologie come la stampa 3D) allo <strong>sviluppo di soluzioni digitali</strong> (come la nostra piattaforma Fantabon), senza dimenticare l'intrattenimento, grazie al nostro <strong>servizio di noleggio e DJ set professionale per eventi</strong>.
-                </p>
-                <p>
-                    Siamo il partner ideale per chi cerca un approccio fuori dagli schemi. Che tu abbia bisogno di trasformare un'idea in un prototipo fisico, sviluppare un progetto software, o animare la tua prossima festa con attrezzatura audio di alta qualità, il nostro team ha le competenze per realizzare il tuo progetto curandolo in ogni minimo dettaglio.
-                </p>
+        <section id="about" class="content-section reveal">
+            <div class="container about-grid">
+                <div class="about-header">
+                    <h2>Benvenuto in Ziodan Workshop</h2>
+                    <p class="section-lead">Il laboratorio creativo dove progettazione tecnologica e intrattenimento si incontrano.</p>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Non siamo la classica azienda. Ziodan Workshop è un <span class="highlight">hub multidisciplinare</span>: uniamo la <strong>progettazione tecnica e la prototipazione rapida</strong> (tramite tecnologie come la stampa 3D) allo <strong>sviluppo di soluzioni digitali</strong> (come la nostra piattaforma Fantabon), senza dimenticare l'intrattenimento, grazie al nostro <strong>servizio di noleggio e DJ set professionale per eventi</strong>.
+                    </p>
+                    <p>
+                        Siamo il partner ideale per chi cerca un approccio <span class="highlight">fuori dagli schemi</span>. Che tu abbia bisogno di trasformare un'idea in un prototipo fisico, sviluppare un progetto software, o animare la tua prossima festa con attrezzatura audio di alta qualità, il nostro team ha le competenze per realizzare il tuo progetto curandolo in ogni minimo dettaglio.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -78,7 +82,7 @@
 
 
 
-        <section id="services" class="content-section-dark">
+        <section id="services" class="content-section-dark reveal">
             <div class="container">
                 <h2>Cosa Facciamo</h2>
                 <div class="services-grid">
@@ -100,7 +104,7 @@
                 </div>
             </div>
         </section>
-        <section id="fantabon" class="content-section promo-section">
+        <section id="fantabon" class="content-section promo-section reveal">
     <div class="container">
         <h2>Scopri Fantabon</h2>
         <p class="section-lead">La nostra applicazione dedicata al fantacalcio e al divertimento tra amici.</p>
@@ -148,6 +152,26 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((section) => {
+            observer.observe(section);
         });
     </script>
 </body>
