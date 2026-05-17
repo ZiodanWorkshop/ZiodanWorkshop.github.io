@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+:root {
+    --bg-primary: #0d1f24;
+    --teal: #196570;
+    --amber: #bf912d;
+    --red: #c52040;
+    --text: #e7eceb;
+    --muted: #9fb0b4;
+    --card-border: rgba(191, 145, 45, 0.22);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --font-serif: 'Cinzel', serif;
+}
+
+body.aeon-theme {
+    background-color: var(--bg-primary);
+    color: var(--text);
+}
+
+.aeon-theme h1, 
+.aeon-theme h2, 
+.aeon-theme h3, 
+.aeon-theme .serif-title {
+    font-family: var(--font-serif);
+    color: white;
+}
+
+/* Override navbar for aeon theme */
+.aeon-theme .navbar {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid rgba(25, 101, 112, 0.3);
+}
+
+/* Texture Overlay */
+.texture-overlay {
+    position: relative;
+}
+.texture-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('assets/texture.png');
+    background-size: 300px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Sections Base */
+.aeon-section {
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 1 - HERO */
+.aeon-hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+}
+.aeon-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(25, 101, 112, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 70% 50%, rgba(191, 145, 45, 0.1) 0%, transparent 60%);
+    z-index: -1;
+}
+
+.aeon-hero .wordmark {
+    font-size: 1.2rem;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+.aeon-hero h1 {
+    font-size: 5rem;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+.aeon-hero .tagline {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.aeon-hero-ctas {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Buttons */
+.aeon-btn {
+    min-width: 160px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    display: inline-block;
+}
+.aeon-btn-primary {
+    background-color: var(--teal);
+    color: white;
+}
+.aeon-btn-primary:hover {
+    background-color: #1c7582;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(25, 101, 112, 0.4);
+    color: white;
+}
+.aeon-btn-secondary {
+    background-color: transparent;
+    color: var(--amber);
+    border: 1px solid var(--amber);
+}
+.aeon-btn-secondary:hover {
+    background-color: rgba(191, 145, 45, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(191, 145, 45, 0.2);
+    color: var(--amber);
+}
+
+/* 2 - IL PROGETTO */
+.aeon-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+.aeon-cards-row {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.aeon-card {
+    flex: 1;
+    background: var(--card-bg);
+    border: var(--card-border);
+    border-radius: 8px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.aeon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(191, 145, 45, 0.15);
+    border-color: var(--amber);
+}
+.aeon-card i {
+    font-size: 2.5rem;
+    color: var(--teal);
+    margin-bottom: 20px;
+}
+.aeon-card h3 {
+    margin: 0 0 15px;
+    color: white;
+    font-size: 1.4rem;
+}
+.aeon-card p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 3 - COME SI GIOCA */
+.aeon-steps {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    position: relative;
+}
+.aeon-steps::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background-color: var(--teal);
+    z-index: 0;
+}
+.aeon-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+.aeon-step-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-primary);
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    color: var(--teal);
+    font-size: 1.5rem;
+    box-shadow: 0 0 0 10px var(--bg-primary);
+}
+.aeon-step h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.aeon-step p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 4 - FISICO + DIGITALE */
+.aeon-phygital {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0; /* Bridge takes up the gap */
+}
+.aeon-phygital-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.aeon-phygital-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: var(--card-border);
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.aeon-phygital-cap {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.aeon-phygital-bridge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    position: relative;
+}
+.aeon-phygital-bridge::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: -30px; right: -30px;
+    height: 1px;
+    background: var(--teal);
+    z-index: 0;
+}
+.aeon-phygital-node {
+    width: 12px;
+    height: 12px;
+    background: var(--teal);
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px var(--teal);
+    position: relative;
+    z-index: 1;
+}
+
+/* 5 - UNIVERSO DI GIOCO */
+.aeon-lore {
+    text-align: center;
+    background-image: linear-gradient(rgba(13, 31, 36, 0.85), rgba(13, 31, 36, 0.95)), url('assets/lore.png');
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.aeon-lore-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.aeon-lore p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+.aeon-link {
+    color: var(--amber);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.aeon-link:hover {
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(191, 145, 45, 0.5);
+    transform: translateX(5px);
+}
+
+/* 6 - CTA FINALE */
+.aeon-final-cta {
+    text-align: center;
+    padding: 80px 20px 100px;
+}
+.aeon-final-cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+.aeon-final-cta p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+.aeon-btn-amber {
+    background-color: var(--amber);
+    color: #000;
+}
+.aeon-btn-amber:hover {
+    background-color: #d1a036;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(191, 145, 45, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .aeon-section {
+        padding: 48px 20px;
+    }
+    .aeon-hero h1 {
+        font-size: 3rem;
+    }
+    .aeon-hero .tagline {
+        font-size: 1.2rem;
+    }
+    .aeon-hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .aeon-cards-row {
+        flex-direction: column;
+    }
+    
+    .aeon-steps {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .aeon-steps::before {
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        height: auto;
+    }
+    
+    .aeon-phygital {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .aeon-phygital-bridge {
+        display: none;
+    }
+}
