@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
+    <nav class="navbar anime-hide" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">Ziodan Workshop</a>
             <div class="nav-menu">
@@ -31,7 +32,7 @@
             Il tuo browser non supporta i video HTML5.
         </video>
         <div class="video-overlay"></div>
-        <div class="hero-content">
+        <div class="hero-content anime-hide">
             <h1>Ziodan Workshop</h1>
             <p class="subtitle">Innovazione, Progettazione & Intrattenimento</p>
         </div>
@@ -41,13 +42,13 @@
     </header>
 
     <main>
-        <section id="about" class="content-section reveal">
+        <section id="about" class="content-section">
             <div class="container about-grid">
-                <div class="about-header">
+                <div class="about-header anime-hide">
                     <h2>Benvenuto in Ziodan Workshop</h2>
                     <p class="section-lead">Il laboratorio creativo dove progettazione tecnologica e intrattenimento si incontrano.</p>
                 </div>
-                <div class="about-text">
+                <div class="about-text anime-hide">
                     <p>
                         Non siamo la classica azienda. Ziodan Workshop è un <span class="highlight">hub multidisciplinare</span>: uniamo la <strong>progettazione tecnica e la prototipazione rapida</strong> (tramite tecnologie come la stampa 3D) allo <strong>sviluppo di soluzioni digitali</strong> (come la nostra piattaforma Fantabon), senza dimenticare l'intrattenimento, grazie al nostro <strong>servizio di noleggio e DJ set professionale per eventi</strong>.
                     </p>
@@ -82,21 +83,21 @@
 
 
 
-        <section id="services" class="content-section-dark reveal">
+        <section id="services" class="content-section-dark">
             <div class="container">
-                <h2>Cosa Facciamo</h2>
+                <h2 class="anime-hide service-title">Cosa Facciamo</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card anime-hide">
                         <i class="fas fa-cube service-icon"></i>
                         <h3>Progettazione e Prototipazione</h3>
                         <p>Dall'idea al prototipo fisico e funzionante. Sviluppiamo soluzioni su misura utilizzando tecnologie avanzate come la stampa 3D.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card anime-hide">
                         <i class="fas fa-laptop-code service-icon"></i>
                         <h3>Sviluppo Software e App</h3>
                         <p>Creiamo soluzioni digitali personalizzate e piattaforme web, unendo creatività tecnica e design accattivante.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card anime-hide">
                         <i class="fas fa-headphones service-icon"></i>
                         <h3>Noleggio DJ per Eventi</h3>
                         <p>La nostra divisione entertainment offre un servizio professionale di DJ e noleggio attrezzatura audio per feste, cerimonie ed eventi.</p>
@@ -104,7 +105,7 @@
                 </div>
             </div>
         </section>
-        <section id="fantabon" class="content-section promo-section reveal">
+        <section id="fantabon" class="content-section promo-section anime-hide">
     <div class="container">
         <h2>Scopri Fantabon</h2>
         <p class="section-lead">La nostra applicazione dedicata al fantacalcio e al divertimento tra amici.</p>
@@ -154,7 +155,36 @@
             }
         });
 
-        // Scroll Animations
+        // Intro Animations (On Load)
+        document.addEventListener('DOMContentLoaded', () => {
+            anime({
+                targets: '.navbar',
+                translateY: [-50, 0],
+                opacity: [0, 1],
+                easing: 'easeOutExpo',
+                duration: 1500,
+                delay: 200
+            });
+
+            anime({
+                targets: '.hero-content',
+                scale: [0.95, 1],
+                opacity: [0, 1],
+                easing: 'easeOutExpo',
+                duration: 1500,
+                delay: 600
+            });
+
+            anime({
+                targets: '.scroll-indicator',
+                translateY: [0, 15, 0],
+                easing: 'easeInOutSine',
+                duration: 1500,
+                loop: true
+            });
+        });
+
+        // Scroll Animations (Intersection Observer)
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -164,13 +194,60 @@
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
+                    const target = entry.target;
+
+                    if (target.id === 'about') {
+                        anime({
+                            targets: '.about-header',
+                            translateX: [-50, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutCubic',
+                            duration: 1200
+                        });
+                        anime({
+                            targets: '.about-text',
+                            translateX: [50, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutCubic',
+                            duration: 1200,
+                            delay: 200
+                        });
+                    }
+
+                    if (target.id === 'services') {
+                        anime({
+                            targets: '.service-title',
+                            translateY: [30, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutExpo',
+                            duration: 1000
+                        });
+                        anime({
+                            targets: '.service-card',
+                            translateY: [50, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutExpo',
+                            duration: 1000,
+                            delay: anime.stagger(200, {start: 300})
+                        });
+                    }
+
+                    if (target.id === 'fantabon') {
+                        anime({
+                            targets: '#fantabon',
+                            translateY: [40, 0],
+                            opacity: [0, 1],
+                            easing: 'easeOutExpo',
+                            duration: 1200
+                        });
+                    }
+
+                    observer.unobserve(target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach((section) => {
+        document.querySelectorAll('#about, #services, #fantabon').forEach((section) => {
             observer.observe(section);
         });
     </script>
