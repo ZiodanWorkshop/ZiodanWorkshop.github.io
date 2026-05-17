@@ -13,6 +13,18 @@
 </head>
 <body>
 
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Ziodan Workshop</a>
+            <div class="nav-menu">
+                <a href="#about" class="nav-link">Chi Siamo</a>
+                <a href="#services" class="nav-link">Servizi</a>
+                <a href="#fantabon" class="nav-link">Fantabon</a>
+                <a href="#footer" class="nav-button">Contattaci</a>
+            </div>
+        </div>
+    </nav>
+
     <header class="hero-section">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="ziodan-intro.mp4" type="video/mp4">
@@ -105,35 +117,38 @@
 </section>
 
 
-        <section id="contact" class="content-section">
-            <div class="container">
-                <h2>Hai un'idea? Contattaci</h2>
-                <p>Siamo pronti ad ascoltarti. Scrivici o chiamaci per richiederci un preventivo o semplicemente per saperne di più.</p>
-                <div class="contact-details">
-                    <a href="mailto:info@ziodanworkshop.org" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@ziodanworkshop.org</span>
-                    </a>
-                    <a href="tel:+393518128329" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+39 351 812 8329</span>
-                    </a>
-                    <a href="https://wa.me/390766502670" target="_blank" class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+39 0766 502670</span>
-                    </a>
-                    <a href="https://www.instagram.com/ziodan.workshop" target="_blank" class="contact-item">
-                        <i class="fab fa-instagram"></i>
-                        <span>@ziodan.workshop</span>
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer class="site-footer">
-        <p>&copy; 2025 Ziodan Workshop. Tutti i diritti riservati.</p>
+    <footer id="footer" class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Ziodan Workshop</h3>
+                <p>Il laboratorio creativo dove progettazione e intrattenimento si incontrano.</p>
+            </div>
+            <div class="footer-contacts">
+                <h4>Contattaci</h4>
+                <div class="footer-socials">
+                    <a href="mailto:info@ziodanworkshop.org" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+393518128329" title="Telefono"><i class="fas fa-phone"></i></a>
+                    <a href="https://wa.me/390766502670" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/ziodan.workshop" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ziodan Workshop. Tutti i diritti riservati.</p>
+        </div>
     </footer>
 
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
